@@ -1,31 +1,25 @@
-<div class="row">
-    <!-- <div class="col-lg-3">
-    </div> -->
-    <div class="col-lg-12 ">
-        <h2 class="text-center">User Details</h2>
-        <table class="table table-bordered table-striped text-center">
-            <thead style="background-color: goldenrod;">
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Age</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let user of users; let i = index">
-                    <th scope="row">{{i + 1}}</th>
-                    <td>{{user.name}}</td>
-                    <td>{{user.age}}</td>
-                </tr>
-            </tbody>
-        </table>
-        <br>
-        <div class="text-center">
-            <button class="btn" (click)="show = !show">Toggle content with ngIf</button>
-            <p *ngIf="show; else elseBlock" (click)="show = !show">Content to render when condition is <b>true</b>.</p>
-            <ng-template #elseBlock>
-                <p>Content to render when condition is <b>false</b>.</p>
-            </ng-template>
-        </div>
-    </div>
+<h2 class="text-center">User Details</h2>
+<table class="table table-bordered table-striped text-center">
+    <thead style="background-color: goldenrod;">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users; let i = index">
+            <th scope="row">{{i + 1}}</th>
+            <td>{{user.name}}</td>
+            <td>{{user.age}}</td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<div class="text-center">
+    <button class="btn" (click)="show = !show">Toggle content with ngIf</button>
+    <p *ngIf="show; else elseBlock" (click)="show = !show">Content to render when condition is <b>true</b>.</p>
+    <ng-template #elseBlock>
+        <p>Content to render when condition is <b>false</b>.</p>
+    </ng-template>
 </div>
