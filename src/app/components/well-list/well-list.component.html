@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-lg-6">
+        <span style="display: flex">
+            <h2 class="text-left">Well List</h2>
+            <button class="btn btn-primary text-right" style="margin-left: auto; margin-top: 20px; height: 40px;"
+            (click)="addWell($event)">Add Well</button>
+        </span>
+
+        <table class="table table-bordered wellTable table-striped text-center">
+            <thead style="background-color: goldenrod;">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Source Key</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let well of wells; let i = index">
+                    <th scope="row">{{i + 1}}</th>
+                    <td>{{well.name}}</td>
+                    <td [ngClass]="{'wellESPType': well.type === 'esp' }" style="background-color: green">{{well.type}}</td>
+                    <!-- <td [ngStyle]="{ 'background-color': well.type === 'esp' ? 'pink' : 'green', 'color': well.type === 'esp' ? 'black' : 'red' }">{{well.type}}</td> -->
+                    <td>{{well.srcKey}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="isAddWell" class="col-lg-6">
+        <h2 class="text-center">Add Well Information</h2>
+        <app-well [srcKey]="srcKey" (emitWell)="emitWell($event)"></app-well>
+        <!-- <app-well [srcKey]="srcKey"></app-well>
+        <button type="submit" class="btn btn-success text-center" (click)="emitWell()">Add</button> -->
+    </div>
+</div>

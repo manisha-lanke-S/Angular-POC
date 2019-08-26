@@ -1,0 +1,25 @@
+<form class="form text-center" [formGroup]="addWellForm" (ngSubmit)="onSubmit(addWellForm.value)">
+    <div class="form-group">
+        <label for="name">
+            Name:
+            <input id="name" type="text" class="form-control" formControlName="name">
+        </label>
+    </div>
+
+    <div class="form-group">
+        <label for="type">
+            Type:
+            <input id="type" type="text" class="form-control" formControlName="type">
+        </label>
+    </div>
+
+    <div class="form-group">
+        <label for="srcKey">
+            Source Key:
+            <input #sourceKey id="srcKey" type="text" class="form-control" formControlName="srcKey">
+        </label>
+    </div>
+
+    <button type="submit" class="btn btn-success text-center" [disabled]="!addWellForm.valid">Add</button>
+
+</form>

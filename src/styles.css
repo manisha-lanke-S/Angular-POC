@@ -7,3 +7,17 @@ table tr th{
     margin: auto;
     width: 50% !important; 
  }
+
+ .wellTable {
+   margin: auto;
+   width: 100% !important;
+ }
+
+ .wellTable tbody{
+   color: red;
+ }
+
+ .wellESPType {
+   background-color: pink !important;
+   color: black;
+ }
