@@ -1,0 +1,22 @@
+<h3 class="text-center"><b>Drag and Drop</b></h3>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="drag-container">
+        <div class="section-heading">Dropped Items</div>
+        <div cdkDropList #droppedList="cdkDropList" [cdkDropListData]="droppedComponent" [cdkDropListConnectedTo]="[dragCompList]" class="item-list"
+          (cdkDropListDropped)="drop($event)">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="drag-container">
+        <div class="section-heading">Drag Items From The List</div>
+        <div cdkDropList #dragCompList="cdkDropList" [cdkDropListData]="draggedComponent"
+          [cdkDropListConnectedTo]="[droppedList]" class="item-list">
+          <div class="item-box" *ngFor="let item of draggedComponent" cdkDrag>{{item.value}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
